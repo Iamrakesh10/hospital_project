@@ -1,0 +1,27 @@
+.my-container {
+  padding: 40px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background: #1976d2;
+  color: white;
+}
+
+.Pending { color: orange; }
+.Approved { color: green; }
+.Rejected { color: red; }

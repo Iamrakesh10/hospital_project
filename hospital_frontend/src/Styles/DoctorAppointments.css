@@ -1,0 +1,10 @@
+.doctor-app-container {
+  padding: 40px;
+  background: #eef7ff;
+  min-height: 100vh;
+}
+
+button {
+  margin: 3px;
+  padding: 6px;
+}

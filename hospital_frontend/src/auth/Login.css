@@ -1,0 +1,45 @@
+.login-container {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("../assets/hospital-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: white;
+  padding: 35px;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.login-title {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.login-card label {
+  font-weight: 500;
+}
+
+.login-card button {
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.login-card button:hover {
+  background-color: #0f5fc4;
+}
+
