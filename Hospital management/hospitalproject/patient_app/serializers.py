@@ -2,11 +2,7 @@ from rest_framework import serializers
 from .models import Appointment, MedicalRecord
 from doctor_app.models import DoctorProfile
 
-# class AppointmentSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Appointment
-#         fields = "__all__"
-#         read_only_fields = ["patient", "status",'created_at']
+   
 class AppointmentSerializer(serializers.ModelSerializer):
     patient_name = serializers.CharField(
         source="patient.username",

@@ -23,12 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(!)f!4ul^c&spp^3hp4hh%f(j54(6aq@_unrzsct%uako013pt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = FALSE
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    'rakesh2310.pythonanywhere.com'
-
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,6 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'accounts_app',
     'doctor_app',
+    'payments_app',
     # 'admin_app',
     'corsheaders',
     'patient_app',        
@@ -49,7 +47,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,8 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
-
 
 ROOT_URLCONF = 'hospitalproject.urls'
 
@@ -127,7 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 from datetime import timedelta
 
@@ -141,4 +137,7 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
+
+STRIPE_SECRET_KEY = "sk_test_51SkKtPJtKL6fzHZM80IZDIqnr2QQ5AW5vhBikucCVriExCR4WGAUeemp74QxpmgfmiU0dSjTBBTrPwC3mNVQcI4x00nF4O5z7i"
+STRIPE_PUBLIC_KEY = "pk_test_51SkKtPJtKL6fzHZMPP9IGgSoMqQG1DnmqaG6NKyajJhc0aGo3L4Py86HatcVcJYxpZV8e3RzwaNenTengq0dbjwM00BI9p9Vkh"
 

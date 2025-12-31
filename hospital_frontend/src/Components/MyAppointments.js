@@ -1,25 +1,45 @@
 import React, { useEffect, useState } from "react";
 import api from "../api/axios";
+import "../Styles/MyAppointments.css";
 
 export default function MyAppointments() {
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
     api.get("patient/appointments/my/")
-      .then((res) => setAppointments(res.data));
+      .then((res) => setAppointments(res.data))
+      .catch((err) => console.log(err));
   }, []);
 
   return (
-    <div>
-      <h2>My Appointments</h2>
+    <div className="my-container">
+      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+        My Appointments
+      </h2>
 
-      {appointments.map(a => (
-        <div key={a.id}>
-          <p>{a.doctor_name}</p>
-          <p>{a.date} at {a.time}</p>
-          <p>Status: {a.status}</p>
-        </div>
-      ))}
+      <table>
+        <thead>
+          <tr>
+            
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {appointments.map((a) => (
+            <tr key={a.id}>
+              
+              <td>{a.date}</td>
+              <td>{a.time}</td>
+              <td className={a.status}>
+                {a.status}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

@@ -9,7 +9,7 @@
 .appointment-card {
   background: white;
   padding: 30px;
-  width: 350px;
+  width: 360px;
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
@@ -20,17 +20,26 @@
   color: #1976d2;
 }
 
-input {
+.appointment-card input,
+.appointment-card select {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-button {
+.appointment-card button {
   width: 100%;
   padding: 10px;
   background: #1976d2;
   color: white;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.appointment-card button:hover {
+  background: #125aa3;
 }
